@@ -20,7 +20,7 @@ const getData = async(category : string) => {
       return data;
 }
 
-export const CategoryPage = async({params} : {params: {category: string}}) => {
+const CategoryPage = async({params} : {params: {category: string}}) => {
     const categoryData : simplifiedProduct[] = await getData(params.category)
   return (
     <div className="bg-white">
