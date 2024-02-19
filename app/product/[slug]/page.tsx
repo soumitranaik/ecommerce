@@ -25,7 +25,7 @@ const getData = async(slug : string) => {
       
 }
 
-export const ProductPage = async({params} : {params: {slug: string}}) => {
+const ProductPage = async({params} : {params: {slug: string}}) => {
 
     const Productdata : fullProduct = await getData(params.slug);
     console.log ("data",Productdata);
