@@ -23,7 +23,7 @@ const product = {
   price_id: price_id,
 };
   return (
-    <Button onClick={() => {checkoutSingleItem(price_id);  console.log("currency",currency)} }>Add to Bag</Button>
+    <Button onClick={() => buyNow(product.price_id) }>Add to Bag</Button>
   )
 }
 
