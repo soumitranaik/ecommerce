@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { CheckCheck, Link } from 'lucide-react'
 import React from 'react'
 
-export const stripeSuccess = () => {
+const stripeSuccess = () => {
   return (
     <div className="h-screen">
       <div className="mt-32 md:max-w-[50vw] mx-auto">
