@@ -1,4 +1,5 @@
 import AddToBag from '@/app/components/AddToBag';
+import CheckOutNow from '@/app/components/CheckoutNow';
 import ImageGallery from '@/app/components/ImageGallery';
 import { fullProduct } from '@/app/interface';
 import { client } from '@/app/lib/sanity';
@@ -79,7 +80,13 @@ const ProductPage = async({params} : {params: {slug: string}}) => {
                 key={Productdata._id}
                 price_id={Productdata.price_id}
               />
-              <Button variant="secondary">Checkout</Button>
+              <CheckOutNow name={Productdata.name}
+                currency="INR"
+                description={Productdata.Description}
+                price={Productdata.price}
+                image={Productdata.images[0]}
+                key={Productdata._id}
+                price_id={Productdata.price_id} />
             </div>
 
             <p className="mt-12 text-gray-500 tracking-wide text-base">
