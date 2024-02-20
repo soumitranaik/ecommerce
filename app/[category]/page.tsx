@@ -6,7 +6,19 @@ import { ArrowRight } from 'lucide-react';
 import { simplifiedProduct } from '../interface';
 
 const getData = async(category : string) => {
-    const query = `*[_type=="product" && category -> name == '${category}']{
+  let query;
+  if (category === 'all'){
+     query = `*[_type=="product"]{
+      _id,
+        name,
+        "imageUrl": images[0].asset->url,
+          price,
+        "slug": slug.current,
+        "categoryName": category -> name
+    }`;
+  }
+  else {
+     query = `*[_type=="product" && category -> name == '${category}']{
         _id,
           name,
           "imageUrl": images[0].asset->url,
@@ -14,6 +26,8 @@ const getData = async(category : string) => {
           "slug": slug.current,
           "categoryName": category -> name
       }`;
+
+    }
 
       const data = await client.fetch(query);
 
